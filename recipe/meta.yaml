@@ -1,5 +1,6 @@
 {% set name = "figanos" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/figanos-{{ version }}.tar.gz
-  sha256: 44f84e4513cc9a828dcbcff2f8411318131026e8265db3da03061391ced67f3d
+  sha256: 95c0869bf361d56ba86bf3e2ff24770e11edcfd89bb90d34ee81f28aba8c7fda
 
 build:
   noarch: python
@@ -25,14 +26,14 @@ requirements:
     - cairosvg >=2.6.0
     - geopandas >=1.0
     - matplotlib-base >=3.6.0
-    - numpy >=1.23.0,<2.0.0
+    - numpy >=1.25.0
     - pandas >=2.2.0
-    - pint >=0.10
+    - pint >=0.18
     - platformdirs >=4.0
     - pyyaml >=6.0.1
     - seaborn >=0.13.0
-    - scikit-image >=0.20.0
-    - xarray >=2022.6.0
+    - scikit-image >=0.21.0
+    - xarray >=2023.11.0
     - xclim >=0.52.2
 
 test:
