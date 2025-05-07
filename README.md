@@ -148,5 +148,6 @@ Feedstock Maintainers
 =====================
 
 * [@Zeitsperre](https://github.com/Zeitsperre/)
+* [@juliettelavoie](https://github.com/juliettelavoie/)
 * [@sarahclaude](https://github.com/sarahclaude/)
 
