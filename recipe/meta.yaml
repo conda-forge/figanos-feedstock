@@ -18,14 +18,14 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - flit-core >=3.10.1,<4
+    - flit-core >=3.11.0,<4
     - pip
   run:
     - python >={{ python_min }}
     - cartopy >=0.23.0
     - cairosvg >=2.6.0
     - geopandas >=1.0
-    - matplotlib-base >=3.6.0
+    - matplotlib-base >=3.8.0
     - numpy >=1.25.0
     - pandas >=2.2.0
     - pint >=0.18
@@ -35,6 +35,7 @@ requirements:
     - scikit-image >=0.21.0
     - xarray >=2023.11.0
     - xclim >=0.52.2
+    - xsdba >=0.4.0
 
 test:
   imports:
@@ -53,7 +54,7 @@ test:
 about:
   home: https://github.com/Ouranosinc/figanos
   license: Apache-2.0
-  license_family: Apache
+  license_family: APACHE
   license_file: LICENSE
   summary: Tools for producing informative graphics on the impacts of climate change.
   doc_url: https://figanos.readthedocs.io/
