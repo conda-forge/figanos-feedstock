@@ -1,5 +1,5 @@
 {% set name = "figanos" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/figanos-{{ version }}.tar.gz
-  sha256: b5070d73a6fb01d5afa8f490e870d3dab2417d73c9c040b9585a2a1ac45b568b
+  sha256: de81f925f4c5fa3c4f178ce56cc14342b1444cd1ed249222742807a346479db1
 
 build:
   noarch: python
