@@ -1,5 +1,5 @@
 {% set name = "figanos" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/figanos-{{ version }}.tar.gz
-  sha256: b5070d73a6fb01d5afa8f490e870d3dab2417d73c9c040b9585a2a1ac45b568b
+  sha256: de81f925f4c5fa3c4f178ce56cc14342b1444cd1ed249222742807a346479db1
 
 build:
   noarch: python
@@ -18,8 +18,8 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - flit-core >=3.11.0,<4
-    - pip
+    - flit-core >=3.12.0,<4
+    - pip >=26.0.1
   run:
     - python >={{ python_min }}
     - cartopy >=0.23.0
@@ -28,23 +28,22 @@ requirements:
     - matplotlib-base >=3.8.0
     - numpy >=1.25.0
     - pandas >=2.2.0
-    - pint >=0.18
     - platformdirs >=4.0
     - pyyaml >=6.0.1
     - seaborn >=0.13.0
     - scikit-image >=0.21.0
     - xarray >=2023.11.0
     - xclim >=0.52.2
-    - xsdba >=0.4.0
 
 test:
   imports:
     - figanos
   requires:
     - python {{ python_min }}
-    - pytest >=8.3.2
-    - pip
+    - pytest >=9.0.2
+    - pip >=26.0.1
   source_files:
+    - pyproject.toml
     - src/figanos
     - tests
   commands:
