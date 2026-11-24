@@ -1,0 +1,73 @@
+schema_version: 1
+
+context:
+  name: figanos
+  version: "0.8.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/figanos-${{ version }}.tar.gz
+  sha256: 22b4a5650443e1026e3f7efbb051db5ff92c0902905136c2e202c6d380469cb6
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - flit-core >=4.0,<5.0
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - cartopy >=0.23.0
+    - cairosvg >=2.6.0
+    - geopandas >=1.0
+    - matplotlib-base >=3.8.0
+    - numpy >=2.2.0
+    - pandas >=2.2.0
+    - platformdirs >=4.0
+    - pyyaml >=6.0.1
+    - seaborn >=0.13.0
+    - scikit-image >=0.23.0
+    - xarray >=2024.11.0
+    - xclim >=1.0.0
+
+tests:
+  - python:
+      imports:
+        - figanos
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - files:
+      source:
+        - pyproject.toml
+        - src/figanos
+        - tests
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pytest >=9.0.2
+        - pip
+    script:
+      - python -m pytest tests
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: Tools for producing informative graphics on the impacts of climate change.
+  homepage: https://github.com/Ouranosinc/figanos
+  repository: https://github.com/Ouranosinc/figanos
+  documentation: https://figanos.readthedocs.io/
+
+extra:
+  recipe-maintainers:
+    - juliettelavoie
+    - sarahclaude
+    - Zeitsperre
